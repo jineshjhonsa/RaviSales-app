@@ -25,7 +25,7 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0"
   },
-  "description": "A Pen created at CodePen.io. You can find this one at http://codepen.io/alassetter/pen/cyrfB.",
+  "description": "The app is taking data from android app and displayng it on the webappwebsite. I used MEAN Stack to implement it.",
   "main": "app.js",
   "devDependencies": {},
   "author": "",
