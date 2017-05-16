@@ -11,22 +11,11 @@ require('./models/models.js');
 
 
 
-//var index = require('./routes/index');
-//var authenticate = require('./routes/authenticate')(passport);
 var mongoose = require('mongoose');
-/*var env = process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 
-if(env==='dev') {
-    mongoose.connect('mongodb://localhost:27017/chirpit');
-}
-else
-{*/
-    //
-   mongoose.connect('mongodb://chatme:chatme@ds145325.mlab.com:45325/chirpit');
-//}
 
-//
-   //mongoose.connect('mongodb://localhost:27017/chirpit');
+   mongoose.connect('your mongodb link');
+
 
 
 
@@ -55,14 +44,7 @@ app.use(express.static(path.join(__dirname, 'public1')));
 
 var scoreapi = require('./routes/foldersit');
 app.use('/folder_data', scoreapi);
-/*app.use(passport.session());
 
-
-app.use('/', index);
-app.use('/auth', authenticate);*/
-
-
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;

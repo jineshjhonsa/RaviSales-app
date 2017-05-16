@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require( 'mongoose' );
-var Newfolder = mongoose.model('z');
+var Newfolder = mongoose.model('folderdat');
 
 //api for all posts
 router.route('/folder')
@@ -44,7 +44,3 @@ router.route('/folder')
 });
 
     });
-
-
-
-module.exports = router;

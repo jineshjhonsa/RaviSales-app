@@ -1,4 +1,4 @@
-var app = angular.module('Ravi_location', ['ngRoute','ngResource']).run(function($rootScope,$http) {
+var app = angular.module('Ravi_sell', ['ngRoute','ngResource']).run(function($rootScope,$http) {
   
   });
 
@@ -11,16 +11,7 @@ app.config(function($routeProvider){
       templateUrl: 'host.html',
       controller: 'hostController'
     })
-    //the login display
-    .when('/scorecard', {
-      templateUrl: 'login.html',
-      controller: 'authCh-ontroller'
-    })
-    //the signup display
-    .when('/register', {
-      templateUrl: 'register.html',
-      controller: 'authController'
-    });
+   
 });
 
 app.factory('postService', function($resource){
@@ -28,32 +19,39 @@ app.factory('postService', function($resource){
 });
 
 app.controller('hostController',function($scope,$http){
-   $scope.partylocations =[];
+   $scope.employees =[];
   var employeesadd =[];
-  var loca = {};
-  $scope.getit = function(){
+var employe = {};
+ $scope.getit = function(){
   $scope.employees={};
-  $http.get("/location_data/loca")
+     $http.get("/folder_data/folder")
                  .then(function (response) {
                   console.log("Response is ");
                 console.log(response.data.length);
                  $scope.employees={};
                   for(var i = 0;i<response.data.length;i++){
-                loca ={};
-                loca.time = response.data[i].time;    //should be changed to ObjectId, ref "User"
-                loca.contact_name = response.data[i].contact_name; 
-                loca.party_address = response.data[i].party_address; 
-                loca.location = response.data[i].location; 
-                loca.google_address = response.data[i].google_address;
+                employe ={};
+                employe.time = response.data[i].time;    //should be changed to ObjectId, ref "User"
+                employe.contact_name = response.data[i].contact_name; 
+                employe.party_address = response.data[i].party_address; 
+                employe.party_number = response.data[i].party_number;
+                employe.party_name = response.data[i].party_name;    //should be changed to ObjectId, ref "User"
+                employe.party_comment = response.data[i].party_comment; 
+                employe.day_closed = response.data[i].day_closed; 
+                employe.total_folder = response.data[i].total_folder;
+                employe.folder_name = response.data[i].folder_name; 
+                employe.location = response.data[i].location; 
+                employe.google_address = response.data[i].google_address;
 
-                console.log("Location is ");
-                console.log(loca);
+                console.log("Employee is ");
+                console.log(employe);
 
-                location_add.push(loca);
-                      console.log("location_add is ");
-                      console.log(location_add);
+                employeesadd.push(employe);
+                      console.log("employeesadd is ");
+                      console.log(employeesadd);
                   }
-              
+                  console.log("employeesadd is ");
+                  console.log(employeesadd);
 
                 //  var total = employeesadd.concat(employees);
                   $scope.employees = employeesadd;
@@ -72,6 +70,12 @@ var senddata = {
                   time: "Hi",   
   contact_name: "Hello",
   party_address: "is it what up",
+  party_number:"I ok",
+  party_name: "sdure",
+  party_comment: "dholus bholi",
+  day_closed:"Msokey",
+  total_folder: "dcry",
+  folder_name: "idtna",
   location:"didma",
   google_address:"vagddwdhar"
 
@@ -88,26 +92,7 @@ var senddata = {
     });
    };
 
-       /*   var employees = [
-
-               
-                {
-                    name: "Sara", dateOfBirth: new Date("May 05, 1970"),
-                    gender: "Female", salary: 68000
-                },
-                {
-                    name: "Mark", dateOfBirth: new Date("August 15, 1974"),
-                    gender: "Male", salary: 57000
-                },
-                {
-                    name: "Pam", dateOfBirth: new Date("October 27, 1979"),
-                    gender: "Female", salary: 53000
-                },
-                {
-                    name: "Todd", dateOfBirth: new Date("December 30, 1983"),
-                    gender: "Male", salary: 60000
-                }
-            ];*/
+       
 
 
 
