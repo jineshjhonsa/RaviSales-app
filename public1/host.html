@@ -1,0 +1,62 @@
+
+
+<p> Ravi Folder Data</p>
+
+ <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Contact Name </div>
+                    </th>
+                    <th>
+                        Party Address
+                    </th>
+                    <th>
+                        party number 
+                    </th>
+                     <th>
+                         party comment 
+                    </th>
+                    <th>
+                         party name 
+                    </th>
+                    <th>
+                        day closed </div>
+                    </th>
+                    <th>
+                       total folder
+                    </th>
+                    <th>
+                        folder name 
+                    </th>
+                    <th>
+                       location
+                    </th>
+                    <th>
+                        google address
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees track by $index">
+                    <td> {{ employee.time }} </td>
+                    <td> {{ employee.contact_name }} </td>
+                    <td> {{ employee.party_address }} </td>
+                    <td> {{ employee.party_number  }} </td>
+                    <td> {{ employee.party_name }} </td>
+                    <td> {{ employee.party_comment  }} </td>
+                    <td> {{ employee.day_closed }} </td>
+                    <td> {{ employee.total_folder  }} </td>
+
+                     <td> {{ employee.folder_name  }} </td>
+                    <td> {{ employee.location }} </td>
+                    <td> {{ employee.google_address  }} </td>
+                </tr>
+            </tbody>
+        </table>
+
+<button class="btn btn-primary" ng-click ="getit()">get</button>
+<button class="btn btn-primary" ng-click ="putit()">put</button>
